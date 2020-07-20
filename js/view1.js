@@ -17,7 +17,6 @@ $(function () {
             html+=`
                <tr>
                                 <td>${msg}</td>
-                                <td>3333</td>
                                 <td>2020 19:20</td>
                                 <td>2020 19:20</td>
                                 <td>4444</td>
