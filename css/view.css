@@ -74,9 +74,33 @@ body {
     font-size:21px;
     font-weight:bold;
     color:rgba(0,150,255,1);
-    background:linear-gradient(92deg,rgba(0,114,255,1) 0%, rgba(0,234,255,1) 48.8525390625%, rgba(1,170,255,1) 100%);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+    /*background:linear-gradient(92deg,rgba(0,114,255,1) 0%, rgba(0,234,255,1) 48.8525390625%, rgba(1,170,255,1) 100%);*/
+    /*-webkit-background-clip:text;*/
+    /*-ms-background-clip:text;*/
+    /*-o-background-clip:text;*/
+    /*-webkit-text-fill-color:transparent;*/
+}
+.svgdata{
+    height: 100%;
+}
+.svg-text{
+    font-size: 21px;
+}
+.logo-foot{
+    padding-left: 20px;
+}
+.ab-logo{
+    width: 100px;
+    height: auto;
+    vertical-align: top;
+    margin-top: 8px;
+    margin-left: 10px;
+}
+.jd-logo{
+    width: 130px;
+    height: auto;
+    vertical-align: top;
+    margin-top: 5px;
 }
 .time-show{
     font-size: 24px;
@@ -326,5 +350,14 @@ body {
     }
     .baiduList-title{
         font-size: 30px;
+    }
+    .jd-logo{
+        width: 300px;
+        margin-top: 20px;
+    }
+    .ab-logo{
+        width: 250px;
+        margin-top: 25px;
+        margin-left: 50px;
     }
 }
