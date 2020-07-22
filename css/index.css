@@ -1,0 +1,72 @@
+.driverMsg-bg{
+    width: 100%;
+    min-height:100vh;
+    height: auto;
+    background:#00043A;
+    padding:0 3rem;
+}
+.box-div{
+    width: 100%;
+    min-height: 45rem;
+    height: auto;
+    background: url(../img/box.png);
+    background-size: 100% 100%;
+    padding:4rem 2rem;
+    position: relative;
+}
+.driverMsg-title{
+    font-size: 3.6rem;
+    color: #86CCFD;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 5rem;
+    background: url("../img/box-title-bg.png") no-repeat center center;
+    background-size: cover;
+    height: 7rem;
+    line-height: 7rem;
+}
+
+.driverMsg-li{
+    margin-bottom: 4rem;
+}
+.driverMsg-li>span{
+    width: 20%;
+    font-size: 3rem;
+    text-align: right;
+    color:#86CCFD;
+    vertical-align: middle;
+}
+.driverMsg-li>input{
+    background: rgba(255,255,255,0.2);
+    height: 6rem;
+    border: 0.1rem solid rgba(255,255,255,0.3);
+    border-radius: 0.5rem;
+    vertical-align: middle;
+    color:#fff;
+    font-size: 3rem;
+    padding-left: 2rem;
+    width: 70%;
+}
+.btn-list{
+    width:100%;
+    position: absolute;
+    left: 0;
+    bottom:3rem;
+    text-align: center;
+}
+.btn-list>div{
+    width: 15%;
+    height: 6rem;
+    line-height: 6rem;
+    text-align: center;
+    font-size: 3rem;
+    border-radius: 1rem;
+    color:#fff;
+}
+.reset-btn{
+    background: rgba(102,102,102,0.5);
+    margin-right: 5rem;
+}
+.sub-btn{
+    background: rgba(64,158,255,.8);
+}
