@@ -11,7 +11,7 @@
     height: auto;
     background: url(../img/box.png);
     background-size: 100% 100%;
-    padding:4rem 2rem;
+    padding:6rem 2rem;
     position: relative;
 }
 .driverMsg-title{
@@ -25,18 +25,20 @@
     height: 7rem;
     line-height: 7rem;
 }
-
+.driverMsg-ul{
+    margin-bottom: 11rem;
+}
 .driverMsg-li{
     margin-bottom: 4rem;
 }
 .driverMsg-li>span{
-    width: 20%;
+    width: 30%;
     font-size: 3rem;
     text-align: right;
     color:#86CCFD;
     vertical-align: middle;
 }
-.driverMsg-li>input{
+.driverMsg-li>input,.li-sel{
     background: rgba(255,255,255,0.2);
     height: 6rem;
     border: 0.1rem solid rgba(255,255,255,0.3);
@@ -45,17 +47,17 @@
     color:#fff;
     font-size: 3rem;
     padding-left: 2rem;
-    width: 70%;
+    width: 60%;
 }
 .btn-list{
     width:100%;
     position: absolute;
     left: 0;
-    bottom:3rem;
+    bottom:5rem;
     text-align: center;
 }
 .btn-list>div{
-    width: 15%;
+    width: 25%;
     height: 6rem;
     line-height: 6rem;
     text-align: center;
@@ -69,4 +71,50 @@
 }
 .sub-btn{
     background: rgba(64,158,255,.8);
+}
+.img-up-box{
+    position: relative;
+    width: 10rem;
+    height: 10rem;
+    vertical-align: middle;
+}
+.img-up,.img-up-input,.img-up-input1{
+    width: 10rem!important;
+    height: 10rem!important;
+    position: absolute;
+    top:0;
+    left:0;
+    vertical-align: middle;
+}
+.img-up-input,.img-up-input1{
+    opacity: 0;
+}
+.imgshow-box{
+    width: 10rem;
+    height: 10rem;
+    margin-right: 2rem;
+    vertical-align: middle;
+    position: relative;
+}
+.img-show{
+    vertical-align: middle;
+}
+.imgshow-box>img{
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    border-radius:1rem;
+}
+.imgshow-box>b{
+    font-size: 3rem;
+    color:#FFF;
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    background: red;
+    border-radius: 50%;
+    position: absolute;
+    top:0;
+    right:0;
 }

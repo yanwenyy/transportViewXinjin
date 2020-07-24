@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no">
     <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'/>
+    <title>清洁运输管控平台</title>
+    <link rel="Shortcut Icon" href="../img/titleLogo.ico" type="image/x-icon" />
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/index.css">
     <title>信息录入</title>
@@ -14,16 +16,76 @@
         <div class="box-div box-sizing">
             <ul class="driverMsg-ul">
                 <li class="driverMsg-li box-sizing">
-                    <span class="inline-block">姓名:</span>
-                    <input type="text">
+                    <span class="inline-block">证件文字识别:</span>
+                    <div class="inline-block img-show word-img-box">
+                        <!--<div class="imgshow-box">-->
+                        <!--<img src="" alt="">-->
+                        <!--<b>x</b>-->
+                        <!--</div>-->
+                    </div>
+                    <div class="inline-block img-up-box word-img">
+                        <img src="../img/upImg.png" alt="" class="img-up">
+                        <input type="file" data-parent="word-img-box" data-list="wzsb" class="img-up-input" accept="image/*">
+                    </div>
                 </li>
                 <li class="driverMsg-li box-sizing">
-                    <span class="inline-block">手机号:</span>
-                    <input type="text">
+                    <span class="inline-block">车牌号:</span>
+                    <input type="text" class="box-sizing">
+                </li>
+                <li class="driverMsg-li box-sizing">
+                    <span class="inline-block">注册日期:</span>
+                    <input type="text" class="box-sizing">
+                </li>
+                <li class="driverMsg-li box-sizing">
+                    <span class="inline-block">车辆识别代号:</span>
+                    <input type="text" class="box-sizing">
+                </li>
+                <li class="driverMsg-li box-sizing">
+                    <span class="inline-block">发动机号码:</span>
+                    <input type="text" class="box-sizing">
+                </li>
+                <li class="driverMsg-li box-sizing">
+                    <span class="inline-block">燃油种类:</span>
+                    <select name=""  class="li-sel">
+                        <option value="1">柴油</option>
+                        <option value="2">天然气</option>
+                        <option value="3">纯电动</option>
+                        <option value="4">油电混动</option>
+                    </select>
+                </li>
+                <li class="driverMsg-li box-sizing">
+                    <span class="inline-block">随车清单:</span>
+                    <div class="inline-block img-show img-show1">
+                        <!--<div class="imgshow-box">-->
+                            <!--<img src="" alt="">-->
+                            <!--<b>x</b>-->
+                        <!--</div>-->
+                    </div>
+                    <div class="inline-block img-up-box">
+                        <img src="../img/upImg.png" alt="" class="img-up">
+                        <input type="file" data-parent="img-show1" data-list="scqd" class="img-up-input" accept="image/*">
+                    </div>
+                </li>
+                <li class="driverMsg-li box-sizing">
+                    <span class="inline-block">行驶证:</span>
+                    <div class="inline-block img-show img-show2">
+
+                    </div>
+                    <div class="inline-block img-up-box">
+                        <img src="../img/upImg.png" alt="" class="img-up">
+                        <input type="file" data-parent="img-show2" data-list="xsz" class="img-up-input" accept="image/*">
+                    </div>
+                </li>
+                <li class="driverMsg-li box-sizing">
+                    <span class="inline-block">排放标准:</span>
+                    <select name="" class="li-sel">
+                        <option value="1">国五</option>
+                        <option value="2">国六</option>
+                    </select>
                 </li>
             </ul>
             <div class="btn-list">
-                <div class="reset-btn inline-block">重置</div>
+                <!--<div class="reset-btn inline-block">重置</div>-->
                 <div class="sub-btn inline-block">提交</div>
             </div>
         </div>
@@ -31,4 +93,6 @@
 </body>
 <script src="../js/rem-reset.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.5.0/jquery.js"></script>
+<script src="../js/public.js"></script>
+<script src="../js/driverMsg.js"></script>
 </html>

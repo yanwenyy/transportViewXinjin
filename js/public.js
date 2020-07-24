@@ -175,3 +175,35 @@ function randomString(len) {
     }
     return randomStr + timestamp;
 }
+
+//删除数组内某项的构造函数
+Array.prototype.indexOf = function(val) {
+    for (var i = 0; i < this.length; i++) {
+        if (this[i] == val) return i;
+    }
+    return -1;
+};
+Array.prototype.remove = function(val) {
+    var index = this.indexOf(val);
+    if (index > -1) {
+        this.splice(index, 1);
+    }
+};
+
+// 图片转base64
+function getBase64(file) {
+    return new Promise(function (resolve, reject) {
+        let reader = new FileReader()
+        let imgResult = ''
+        reader.readAsDataURL(file)
+        reader.onload = function () {
+            imgResult = reader.result
+        }
+        reader.onerror = function (error) {
+            reject(error)
+        }
+        reader.onloadend = function () {
+            resolve(imgResult)
+        }
+    })
+}
