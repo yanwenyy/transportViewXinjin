@@ -1,8 +1,8 @@
 //接口变量
 const http_url = {
     formal_url: "http://27.188.69.34:90/xinjin-back/",//正式
-    test_url: "http://59.110.54.1:8080/jinding-back/",//测试
-    Socket_url: "ws://bobao.yingtaiwx.com/px_edu/imserver/",
+    test_url: "http://59.110.54.1:8080/xinjin-back/",//测试
+    Socket_url: "ws://27.188.69.34:90/xinjin-back/imserver/",
     // Socket_url:"ws://192.168.2.19:8081/px_edu/imserver/",
     url: "http://27.188.69.34:90/xinjin-back/"
 };
@@ -206,4 +206,16 @@ function getBase64(file) {
             resolve(imgResult)
         }
     })
+};
+
+//比较日期大小
+function CompareDate(date1,date2){
+    console.log(date1,date2)
+    var oDate1 = new Date(date1);
+    var oDate2 = new Date(date2);
+    if(oDate1.getTime() > oDate2.getTime()){
+        return false;
+    } else {
+        return true;
+    }
 }

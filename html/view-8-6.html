@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>清洁运输管控平台</title>
+    <link rel="Shortcut Icon" href="../img/titleLogo.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/view.css">
+</head>
+<body>
+<div>
+    <div class="title-bg">
+        <div class="logo-foot inline-block">
+            <img class="jd-logo" src="../img/xinjin.png" alt="">
+
+        </div>
+    </div>
+    <div class="body-div">
+        <div class="row">
+            <div class="box red col-lgx-6 col-lg-12 col-xs-12">
+                <div class="box-div box-sizing">
+                    <div class="box-div-title">
+                        <span class="inline-block">运输车辆电子台账</span>
+                    </div>
+                    <div id="baiduList" class="tableList box-sizing inline-block">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>进厂时间</th>
+                                <th>进厂过磅时间</th>
+                                <th>出厂过磅时间</th>
+                                <th>出厂时间</th>
+                                <th>进厂照片</th>
+                                <th>出厂照片</th>
+                                <th>门岗名称</th>
+                                <th>磅房名称</th>
+                                <th>车牌号</th>
+                                <th>注册日期</th>
+                                <th>车辆识别代号(VIN)</th>
+                                <th>发动机号码</th>
+                                <th>燃油种类</th>
+                                <th>随车清单</th>
+                                <th>行驶证</th>
+                                <th>排放阶段</th>
+                                <th>供应商</th>
+                                <th>物料编码</th>
+                                <th>物料名称</th>
+                                <th>计量单号</th>
+                                <th>毛重</th>
+                                <th>皮重</th>
+                                <th>净重</th>
+                                <th>集装箱号</th>
+                                <th>运输方式</th>
+                                <th>运输单位</th>
+                            </tr>
+                            </thead>
+                            <tbody class="tranData">
+                            <!--<tr>-->
+                            <!--<td>2020-7-22 10:00:0</td>-->
+                            <!--<td>2020-7-22 10:00:0</td>-->
+                            <!--<td>2020-7-22 17:00:0</td>-->
+                            <!--<td>2020-7-22 17:00:0</td>-->
+                            <!--<td><img class="table-img" src="../img/test.jpg" alt=""></td>-->
+                            <!--<td>名字</td>-->
+                            <!--<td>名字</td>-->
+                            <!--<td>99999999</td>-->
+                            <!--<td>2020-7-21 17:00:0</td>-->
+                            <!--<td>12345</td>-->
+                            <!--<td>777</td>-->
+                            <!--<td>柴油</td>-->
+                            <!--<td><img class="table-img" src="../img/test.jpg" alt=""></td>-->
+                            <!--<td><img class="table-img" src="../img/test.jpg" alt=""></td>-->
+                            <!--<td>国0:0</td>-->
+                            <!--<td>名字</td>-->
+                            <!--<td>1</td>-->
+                            <!--<td>物料1</td>-->
+                            <!--<td>888</td>-->
+                            <!--<td>2</td>-->
+                            <!--<td>4</td>-->
+                            <!--<td>6</td>-->
+                            <!--<td>999999</td>-->
+                            <!--<td>铁路</td>-->
+                            <!--<td>公司1</td>-->
+                            <!--</tr>-->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="tranPage" class="paging"></div>
+                </div>
+            </div>
+            <div class="box red col-lgx-6 col-lg-12 col-xs-12">
+                <div class="box-div box-sizing">
+                    <div class="box-div-title"><span class="inline-block">场内运输车辆电子台账</span></div>
+                    <div id="table2" class="tableList box-sizing inline-block">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>环保登记编码或内部管理号牌</th>
+                                <th>注册日期</th>
+                                <th>车辆识别代号(VIN)</th>
+                                <th>发动机号码</th>
+                                <th>排放阶段</th>
+                                <th>随车清单</th>
+                                <th>行驶证</th>
+                            </tr>
+                            </thead>
+                            <tbody class="factoryData">
+                            <!--<tr>-->
+                            <!--<td>24444</td>-->
+                            <!--<td>2020-2-20 10:00:00</td>-->
+                            <!--<td>000000</td>-->
+                            <!--<td>99999</td>-->
+                            <!--<td>国:6:6</td>-->
+                            <!--<td><img class="table-img" src="../img/test.jpg" alt=""></td>-->
+                            <!--<td><img class="table-img" src="../img/test.jpg" alt=""></td>-->
+                            <!--</tr>-->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="factoryPage" class="paging"></div>
+                </div>
+            </div>
+            <div class="box red col-lgx-6 col-lg-12 col-xs-12">
+                <div class="box-div box-sizing">
+                    <div class="box-div-title"><span class="inline-block">非道路移动机械电子台账</span></div>
+                    <div id="table3" class="tableList box-sizing inline-block">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>环保登记编码</th>
+                                <th>生产日期</th>
+                                <th>排放阶段</th>
+                                <th>器械环保代码</th>
+                                <th>发动机铭牌</th>
+                            </tr>
+                            </thead>
+                            <tbody class="offroadData">
+                            <!--<tr>-->
+                            <!--<td>24444</td>-->
+                            <!--<td>2020-2-20 10:00:00</td>-->
+                            <!--<td>国:6:6</td>-->
+                            <!--<td>66666</td>-->
+                            <!--<td><img class="table-img" src="../img/test.jpg" alt=""></td>-->
+                            <!--</tr>-->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="offroadPage" class="paging"></div>
+                </div>
+            </div>
+            <div class="box red col-lgx-12 col-lg-12 col-xs-12">
+                <div class="box-div box-sizing">
+                    <div class="box-div-title"><span class="inline-block">进厂物料数据汇总</span></div>
+                    <div id="" class="tableList box-sizing inline-block">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>物料名称</th>
+                                <th>汽车运输量(万t)</th>
+                                <th>火车运输量(万t)</th>
+                                <th>合计(万t)</th>
+                                <th>清洁运输占比(%)</th>
+                            </tr>
+                            </thead>
+                            <tbody class="totalData">
+                            <!--<tr>-->
+                            <!--<td>进口矿</td>-->
+                            <!--<td>0</td>-->
+                            <!--<td>23.37</td>-->
+                            <!--<td>23.27</td>-->
+                            <!--<td>0.00%</td>-->
+                            <!--</tr>-->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="totalPage" class="paging"></div>
+                </div>
+            </div>
+        </div>
+        <div class="foot">
+            <img class="ab-logo" src="../img/aobao.png" alt="">
+        </div>
+    </div>
+    <div class="img-pre out">
+        <img src="../img/test.jpg" alt="">
+    </div>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.5.0/jquery.js"></script>
+<!--<script src="https://cdn.bootcss.com/echarts/4.7.0/echarts-en.common.js"></script>-->
+<script src="../js/paging.js"></script>
+<script src="../js/public.js"></script>
+<script src="../js/view1.js"></script>
+<!--<script src="../js/time.js"></script>-->
+<script>
+    //判断是否ie
+    var DEFAULT_VERSION = 9;
+    var ua = navigator.userAgent.toLowerCase();
+    var isIE = ua.indexOf("msie") > -1;
+    var safariVersion;
+    // console.log(ua);
+    console.log(window.screen.width);
+    if (isIE) {
+        console.log("ie");
+        safariVersion = ua.match(/msie ([\d.]+)/)[1];
+        var sa = parseInt(safariVersion);
+        if (safariVersion <= DEFAULT_VERSION) {
+            //ie9以下，添加class名调用slide框架
+            console.log("ie9下");
+            alert("您的ie版本较低,建议您下载最新版本查看")
+        } else {
+            //ie9以上，调用swiper2
+            console.log("ie9上");
+
+        }
+    } else {
+        //非ie
+    }
+</script>
+</html>
