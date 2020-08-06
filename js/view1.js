@@ -31,7 +31,7 @@ $(function () {
     var ws1=new PxSocket({
         url:http_url.Socket_url,
         name:'getData',
-        data:'jinding'+num,
+        data:'xinjin'+num,
         succ:timeCar
     });
     ws1.connect();
