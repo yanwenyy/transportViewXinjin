@@ -81,6 +81,7 @@
                     <select id="emissionStand" name="" class="li-sel">
                         <option value="国五">国五</option>
                         <option value="国六">国六</option>
+                        <option value="纯电动">纯电动</option>
                     </select>
                 </li>
             </ul>
@@ -108,4 +109,14 @@
 <script src="https://cdn.bootcss.com/jquery/3.5.0/jquery.js"></script>
 <script src="../js/public.js"></script>
 <script src="../js/driverMsg.js"></script>
+<script src="../js/box.js"></script>
+<script src="../js/laydate.js"></script>
+<script>
+    //日期选择
+    laydate.render({
+        elem: '#registTime' //指定元素
+        ,type: 'date'
+        ,trigger: 'click'
+    });
+</script>
 </html>

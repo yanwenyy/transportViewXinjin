@@ -26,6 +26,66 @@
                     <div class="box-div-title">
                         <span class="inline-block">运输车辆电子台账</span>
                     </div>
+                    <div class="box-div-search box-sizing">
+                        <div class="inline-block box-div-search-list">
+                            <span>开始时间:</span>
+                            <input class="vehicle-timeStart" type="text" id="test1">
+                        </div>
+                        <div class="inline-block box-div-search-list">
+                            <span>结束时间:</span>
+                            <input class="vehicle-timeEnd" type="text" id="test2">
+                        </div>
+                        <div class="inline-block box-div-search-list">
+                            <span>燃油种类:</span>
+                            <select name="" class="vehicle-fuelType">
+                                <option value="">全部</option>
+                                <option value="柴油">柴油</option>
+                                <option value="天然气">天然气</option>
+                                <option value="纯电动">纯电动</option>
+                                <option value="油电混动">油电混动</option>
+                            </select>
+                        </div>
+                        <div class="inline-block box-div-search-list">
+                            <span>排放阶段:</span>
+                            <select name="" class="vehicle-emissionStand">
+                                <option value="">全部</option>
+                                <option value="国五">国五</option>
+                                <option value="国六">国六</option>
+                                <option value="纯电动">纯电动</option>
+                            </select>
+                        </div>
+                        <div class="inline-block box-div-search-list">
+                            <span>物料名称:</span>
+                            <input class="vehicle-materialsName" type="text">
+                        </div>
+                        <div class="inline-block box-div-search-list">
+                            <span>运输方式:</span>
+                            <select name="" class="vehicle-tranType">
+                                <option value="">全部</option>
+                                <option value="0">铁路</option>
+                                <option value="1">公路</option>
+                                <option value="2">纯电动</option>
+                            </select>
+                        </div>
+                        <!--<div class="inline-block box-div-search-list">-->
+                            <!--<span>物料大类:</span>-->
+                            <!--<select name="" class="vehicle-materialsPname">-->
+                                <!--<option value="">全部</option>-->
+                                <!--<option value="外矿">外矿</option>-->
+                                <!--<option value="原料">原料</option>-->
+                                <!--<option value="燃料">燃料</option>-->
+                                <!--<option value="辅料">辅料</option>-->
+                                <!--<option value="生铁">生铁</option>-->
+                                <!--<option value="方坯">方坯</option>-->
+                                <!--<option value="中板">中板</option>-->
+                                <!--<option value="线材">线材</option>-->
+                                <!--<option value="副产品">副产品</option>-->
+                                <!--<option value="铸件">铸件</option>-->
+                                <!--<option value="板坯">板坯</option>-->
+                            <!--</select>-->
+                        <!--</div>-->
+                        <button style="float: right;margin-top: 10px" type="button" data-msg="timeCar" class="btn btn-info search-btn">查询</button>
+                    </div>
                     <div id="baiduList" class="tableList box-sizing inline-block">
                         <table>
                             <thead>
@@ -94,7 +154,18 @@
             </div>
             <div class="box red col-lgx-6 col-lg-12 col-xs-12">
                 <div class="box-div box-sizing">
-                    <div class="box-div-title"><span class="inline-block">场内运输车辆电子台账</span></div>
+                    <div class="box-div-title"><span class="inline-block">厂内运输车辆电子台账</span></div>
+                    <div class="box-div-search box-sizing">
+                        <div class="inline-block box-div-search-list">
+                            <span>注册日期:</span>
+                            <input class="venueVehicle-registTime" type="text" id="test3">
+                        </div>
+                        <div class="inline-block box-div-search-list">
+                            <span>环保登记编码或内部管理号牌:</span>
+                            <input class="venueVehicle-evnCarNum" type="text">
+                        </div>
+                        <button type="button" data-msg="timeFactory" class="btn btn-info search-btn">查询</button>
+                    </div>
                     <div id="table2" class="tableList box-sizing inline-block">
                         <table>
                             <thead>
@@ -126,7 +197,18 @@
             </div>
             <div class="box red col-lgx-6 col-lg-12 col-xs-12">
                 <div class="box-div box-sizing">
-                    <div class="box-div-title"><span class="inline-block">非道路移动机械电子台账</span></div>
+                    <div class="box-div-title"><span class="inline-block">厂内非道路移动机械电子台账</span></div>
+                    <div class="box-div-search box-sizing">
+                        <div class="inline-block box-div-search-list">
+                            <span>生产日期:</span>
+                            <input class="nrmm-produceTime" type="text" id="test4">
+                        </div>
+                        <div class="inline-block box-div-search-list">
+                            <span>环保登记编码:</span>
+                            <input class="nrmm-evnProNum" type="text">
+                        </div>
+                        <button type="button" data-msg="timeOffroad" class="btn btn-info search-btn">查询</button>
+                    </div>
                     <div id="table3" class="tableList box-sizing inline-block">
                         <table>
                             <thead>
@@ -155,14 +237,62 @@
             <div class="box red col-lgx-12 col-lg-12 col-xs-12">
                 <div class="box-div box-sizing">
                     <div class="box-div-title"><span class="inline-block">进厂物料数据汇总</span></div>
+                    <div class="box-div-search box-sizing">
+                        <div class="inline-block box-div-search-list">
+                            <span>月份:</span>
+                            <input class="summary-timeStart" type="text" id="test7">
+                        </div>
+                        <div class="inline-block box-div-search-list">
+                            <span>日期:</span>
+                            <input class="summary-timeEnd" type="text" id="test8">
+                        </div>
+                        <!--<div class="inline-block box-div-search-list">-->
+                            <!--<span>排放阶段:</span>-->
+                            <!--<select name="" class="summary-emissionStand">-->
+                                <!--<option value="">全部</option>-->
+                                <!--<option value="国五">国五</option>-->
+                                <!--<option value="国六">国六</option>-->
+                            <!--</select>-->
+                        <!--</div>-->
+                        <div class="inline-block box-div-search-list">
+                            <span>物料名称:</span>
+                            <input class="summary-materialsName" type="text">
+                        </div>
+                        <div class="inline-block box-div-search-list">
+                            <span>运输方式:</span>
+                            <select name="" class="summary-tranType">
+                                <option value="">全部</option>
+                                <option value="0">铁路</option>
+                                <option value="1">公路</option>
+                                <option value="2">纯电动</option>
+                            </select>
+                        </div>
+                        <!--<div class="inline-block box-div-search-list">-->
+                            <!--<span>磅单类型:</span>-->
+                            <!--<select name="" class="summary-meaType">-->
+                                <!--<option value="">全部</option>-->
+                                <!--<option value="1">采购</option>-->
+                                <!--<option value="2">销售</option>-->
+                            <!--</select>-->
+                        <!--</div>-->
+                        <div class="inline-block box-div-search-list">
+                            <span>物料大类:</span>
+                            <select name="" class="summary-materialsPname wldl">
+
+                            </select>
+                        </div>
+                        <button type="button" data-msg="timeTotal" class="btn btn-info search-btn">查询</button>
+                    </div>
                     <div id="" class="tableList box-sizing inline-block">
                         <table>
                             <thead>
                             <tr>
+                                <th>物料大类</th>
                                 <th>物料名称</th>
-                                <th>汽车运输量(万t)</th>
-                                <th>火车运输量(万t)</th>
-                                <th>合计(万t)</th>
+                                <th>汽车运输量(吨)</th>
+                                <th>火车运输量(吨)</th>
+                                <th>纯电动运输量(吨)</th>
+                                <th>总运输量(吨)</th>
                                 <th>清洁运输占比(%)</th>
                             </tr>
                             </thead>
@@ -195,7 +325,7 @@
 <script src="../js/paging.js"></script>
 <script src="../js/public.js"></script>
 <script src="../js/view1.js"></script>
-<!--<script src="../js/time.js"></script>-->
+<script src="../js/laydate.js"></script>
 <script>
     //判断是否ie
     var DEFAULT_VERSION = 9;
@@ -220,5 +350,46 @@
     } else {
         //非ie
     }
+    //日期选择
+    laydate.render({
+        elem: '#test1' //指定元素
+        ,type: 'datetime'
+        ,trigger: 'click'
+    });
+    laydate.render({
+        elem: '#test2' //指定元素
+        ,type: 'datetime'
+        ,trigger: 'click'
+    });
+    laydate.render({
+        elem: '#test3' //指定元素
+        ,type: 'date'
+        ,trigger: 'click'
+    });
+    laydate.render({
+        elem: '#test4' //指定元素
+        ,type: 'date'
+        ,trigger: 'click'
+    });
+    // laydate.render({
+    //     elem: '#test5' //指定元素
+    //     ,type: 'date'
+    //     ,trigger: 'click'
+    // });
+    // laydate.render({
+    //     elem: '#test6' //指定元素
+    //     ,type: 'date'
+    //     ,trigger: 'click'
+    // });
+    laydate.render({
+        elem: '#test7' //指定元素
+        ,type: 'month'
+        ,trigger: 'click'
+    });
+    laydate.render({
+        elem: '#test8' //指定元素
+        ,type: 'date'
+        ,trigger: 'click'
+    });
 </script>
 </html>
