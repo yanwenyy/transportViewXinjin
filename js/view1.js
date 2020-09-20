@@ -116,11 +116,11 @@ $(function () {
                 var v=list[i];
                 var enterImg=v.enterImg?v.enterImg.split(','):[],eterImgHtml=``;
                 for(var j=0;j<enterImg.length;j++){
-                    eterImgHtml+=`<img title="点击查看大图" class="table-img" src="${enterImg[j]&&enterImg[j].indexOf('http')!=-1?enterImg[j]:enterImg[j]?http_url.url+'/jinding/showImg/'+enterImg[j]:''}" alt="">`
+                    eterImgHtml+=`<img title="点击查看大图" class="table-img" src="${enterImg[j]&&enterImg[j].indexOf('http')!=-1?enterImg[j]:enterImg[j]?http_url.url+'/jinding/showImg/door/'+enterImg[j]:''}" alt="">`
                 }
                 var outImg=v.outImg?v.outImg.split(','):[],outImgHtml=``;
                 for(var k=0;k<outImg.length;k++){
-                    outImgHtml+=`<img title="点击查看大图" class="table-img" src="${outImg[k]&&outImg[k].indexOf('http')!=-1?outImg[k]:outImg[k]?http_url.url+'/jinding/showImg/'+outImg[k]:''}" alt="">`
+                    outImgHtml+=`<img title="点击查看大图" class="table-img" src="${outImg[k]&&outImg[k].indexOf('http')!=-1?outImg[k]:outImg[k]?http_url.url+'/jinding/showImg/door/'+outImg[k]:''}" alt="">`
                 }
                 html+=' <tr>\n' +
                     '<td>'+(v.enterTime||'')+'</td>\n' +
