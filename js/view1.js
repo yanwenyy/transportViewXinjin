@@ -86,6 +86,74 @@ $(function () {
     });
 
     //车辆运输
+    // function timeCar() {
+    //     vehicle={
+    //         timeStart:$('.vehicle-timeStart').val()||'',
+    //         timeEnd:$('.vehicle-timeEnd').val()||'',
+    //         fuelType:$('.vehicle-fuelType').val()||'',
+    //         emissionStand:$('.vehicle-emissionStand').val()||'',
+    //         materialsName:$('.vehicle-materialsName').val()||'',
+    //         tranType:$('.vehicle-tranType').val()||'',
+    //         materialsPname:$(".vehicle-materialsPname").val()||'',
+    //         carPageNum:1
+    //     };
+    //     ajax_get("jinding/tran/list?pageNum=1&pageSize="+imgPage+"&timeStart="+vehicle.timeStart+"&timeEnd="+vehicle.timeEnd+"&carNum=&materialsName="+vehicle.materialsName+"&doorPostName=&poundRoom=&containerNum=&tranType="+vehicle.tranType+"&emissionStand="+vehicle.emissionStand+"&fuelType="+vehicle.fuelType+"&materialsPname="+vehicle.materialsPname, function (data) {
+    //         $("#tranPage").paging({
+    //                 total: data.total,
+    //                 numberPage: imgPage
+    //             },
+    //             function(msg) {
+    //                 //回调函数 msg为选中页码
+    //                 ajax_get("jinding/tran/list?pageNum="+msg+"&pageSize="+imgPage+"&timeStart="+vehicle.timeStart+"&timeEnd="+vehicle.timeEnd+"&carNum=&materialsName="+vehicle.materialsName+"&doorPostName=&poundRoom=&containerNum=&tranType="+vehicle.tranType+"&emissionStand="+vehicle.emissionStand+"&fuelType="+vehicle.fuelType+"&materialsPname="+vehicle.materialsPname, function (data) {
+    //                     tran(data)
+    //                 });
+    //             });
+    //         tran(data)
+    //     });
+    //     function tran(data) {
+    //         var list=data.data,i=0,len=list.length,html='';
+    //         for(;i<len;i++){
+    //             var v=list[i];
+    //             var enterImg=v.enterImg?v.enterImg.split(','):[],eterImgHtml=``;
+    //             for(var j=0;j<enterImg.length;j++){
+    //                 eterImgHtml+=`<img title="点击查看大图" class="table-img" src="${enterImg[j]&&enterImg[j].indexOf('http')!=-1?enterImg[j]:enterImg[j]?http_url.url+'/jinding/showImg/door/'+enterImg[j]:''}" alt="">`
+    //             }
+    //             var outImg=v.outImg?v.outImg.split(','):[],outImgHtml=``;
+    //             for(var k=0;k<outImg.length;k++){
+    //                 outImgHtml+=`<img title="点击查看大图" class="table-img" src="${outImg[k]&&outImg[k].indexOf('http')!=-1?outImg[k]:outImg[k]?http_url.url+'/jinding/showImg/door/'+outImg[k]:''}" alt="">`
+    //             }
+    //             html+=' <tr>\n' +
+    //                 '<td>'+(v.enterTime||'')+'</td>\n' +
+    //                 '<td>'+(v.weighTime||'')+'</td>\n' +
+    //                 '<td>'+(v.checkOutTime||'')+'</td>\n' +
+    //                 '<td>'+(v.outFactoryTime||'')+'</td>\n' +
+    //                 '<td>'+eterImgHtml+'</td>\n' +
+    //                 '<td>'+outImgHtml+'</td>\n' +
+    //                 '<td>'+(v.doorPostName||'')+'</td>\n' +
+    //                 '<td>'+(v.poundRoom||'')+'</td>\n' +
+    //                 '<td>'+(v.carNum||'')+'</td>\n' +
+    //                 '<td>'+(v.registTime&&v.registTime.split(" ")[0]||'')+'</td>\n' +
+    //                 '<td>'+(v.vehicleNum||'')+'</td>\n' +
+    //                 '<td>'+(v.engineNum||'')+'</td>\n' +
+    //                 '<td>'+(v.fuelType||'')+'</td>\n' +
+    //                 '<td><img title="点击查看大图" class="table-img" src="'+(v.carCheckList&&v.carCheckList.indexOf('http')!=-1?v.carCheckList:v.carCheckList?http_url.url+'/jinding/showImg/'+v.carCheckList:'')+'" alt=""></td>\n' +
+    //                 '<td><img title="点击查看大图" class="table-img" src="'+(v.drivinglLicense&&v.drivinglLicense.indexOf('http')!=-1?v.drivinglLicense:v.drivinglLicense?http_url.url+'/jinding/showImg/'+v.drivinglLicense:'')+'" alt=""></td>\n' +
+    //                 '<td>'+(v.doorEmissionStand||'')+'</td>\n' +
+    //                 '<td>'+(v.clientName||'')+'</td>\n' +
+    //                 '<td>'+(v.materialsNum||'')+'</td>\n' +
+    //                 '<td>'+(v.materialsName||'')+'</td>\n' +
+    //                 '<td>'+(v.measureNum||'')+'</td>\n' +
+    //                 '<td>'+(v.crossWeigh||'')+'</td>\n' +
+    //                 '<td>'+(v.tareWeigh||'')+'</td>\n' +
+    //                 '<td>'+(v.netWeigh||'')+'</td>\n' +
+    //                 '<td>'+(v.containerNum||'')+'</td>\n' +
+    //                 '<td>'+(v.tranType==1?'公路':v.tranType==0?'铁路':v.tranType==2?'纯电动':'')+'</td>\n' +
+    //                 '<td>'+(v.transportUnit||'')+'</td>\n' +
+    //                 '</tr>'
+    //         }
+    //         $(".tranData").html(html)
+    //     }
+    // }
     function timeCar() {
         vehicle={
             timeStart:$('.vehicle-timeStart').val()||'',
@@ -97,14 +165,16 @@ $(function () {
             materialsPname:$(".vehicle-materialsPname").val()||'',
             carPageNum:1
         };
-        ajax_get("jinding/tran/list?pageNum=1&pageSize="+imgPage+"&timeStart="+vehicle.timeStart+"&timeEnd="+vehicle.timeEnd+"&carNum=&materialsName="+vehicle.materialsName+"&doorPostName=&poundRoom=&containerNum=&tranType="+vehicle.tranType+"&emissionStand="+vehicle.emissionStand+"&fuelType="+vehicle.fuelType+"&materialsPname="+vehicle.materialsPname, function (data) {
+        ajax_get("jinding/tran/list?pageNum="+vehicle.carPageNum+"&pageSize="+imgPage+"&timeStart="+vehicle.timeStart+"&timeEnd="+vehicle.timeEnd+"&carNum=&materialsName="+vehicle.materialsName+"&doorPostName=&poundRoom=&containerNum=&tranType="+vehicle.tranType+"&emissionStand="+vehicle.emissionStand+"&fuelType="+vehicle.fuelType+"&materialsPname="+vehicle.materialsPname, function (data) {
             $("#tranPage").paging({
                     total: data.total,
-                    numberPage: imgPage
+                    numberPage: imgPage,
+                    currentPage:vehicle.carPageNum
                 },
                 function(msg) {
+                    vehicle.carPageNum=msg;
                     //回调函数 msg为选中页码
-                    ajax_get("jinding/tran/list?pageNum="+msg+"&pageSize="+imgPage+"&timeStart="+vehicle.timeStart+"&timeEnd="+vehicle.timeEnd+"&carNum=&materialsName="+vehicle.materialsName+"&doorPostName=&poundRoom=&containerNum=&tranType="+vehicle.tranType+"&emissionStand="+vehicle.emissionStand+"&fuelType="+vehicle.fuelType+"&materialsPname="+vehicle.materialsPname, function (data) {
+                    ajax_get("jinding/tran/list?pageNum="+vehicle.carPageNum+"&pageSize="+imgPage+"&timeStart="+vehicle.timeStart+"&timeEnd="+vehicle.timeEnd+"&carNum=&materialsName="+vehicle.materialsName+"&doorPostName=&poundRoom=&containerNum=&tranType="+vehicle.tranType+"&emissionStand="+vehicle.emissionStand+"&fuelType="+vehicle.fuelType, function (data) {
                         tran(data)
                     });
                 });
@@ -114,23 +184,10 @@ $(function () {
             var list=data.data,i=0,len=list.length,html='';
             for(;i<len;i++){
                 var v=list[i];
-                var enterImg=v.enterImg?v.enterImg.split(','):[],eterImgHtml=``;
-                for(var j=0;j<enterImg.length;j++){
-                    eterImgHtml+=`<img title="点击查看大图" class="table-img" src="${enterImg[j]&&enterImg[j].indexOf('http')!=-1?enterImg[j]:enterImg[j]?http_url.url+'/jinding/showImg/door/'+enterImg[j]:''}" alt="">`
-                }
-                var outImg=v.outImg?v.outImg.split(','):[],outImgHtml=``;
-                for(var k=0;k<outImg.length;k++){
-                    outImgHtml+=`<img title="点击查看大图" class="table-img" src="${outImg[k]&&outImg[k].indexOf('http')!=-1?outImg[k]:outImg[k]?http_url.url+'/jinding/showImg/door/'+outImg[k]:''}" alt="">`
-                }
                 html+=' <tr>\n' +
                     '<td>'+(v.enterTime||'')+'</td>\n' +
-                    '<td>'+(v.weighTime||'')+'</td>\n' +
-                    '<td>'+(v.checkOutTime||'')+'</td>\n' +
                     '<td>'+(v.outFactoryTime||'')+'</td>\n' +
-                    '<td>'+eterImgHtml+'</td>\n' +
-                    '<td>'+outImgHtml+'</td>\n' +
-                    '<td>'+(v.doorPostName||'')+'</td>\n' +
-                    '<td>'+(v.poundRoom||'')+'</td>\n' +
+                    '<td><img title="点击查看大图" class="table-img" src="'+(v.poundImg&&v.poundImg.indexOf('http')!=-1?v.poundImg:v.poundImg?http_url.url+'/jinding/showImg/'+v.poundImg:'')+'" alt=""></td>\n' +
                     '<td>'+(v.carNum||'')+'</td>\n' +
                     '<td>'+(v.registTime&&v.registTime.split(" ")[0]||'')+'</td>\n' +
                     '<td>'+(v.vehicleNum||'')+'</td>\n' +
@@ -139,16 +196,10 @@ $(function () {
                     '<td><img title="点击查看大图" class="table-img" src="'+(v.carCheckList&&v.carCheckList.indexOf('http')!=-1?v.carCheckList:v.carCheckList?http_url.url+'/jinding/showImg/'+v.carCheckList:'')+'" alt=""></td>\n' +
                     '<td><img title="点击查看大图" class="table-img" src="'+(v.drivinglLicense&&v.drivinglLicense.indexOf('http')!=-1?v.drivinglLicense:v.drivinglLicense?http_url.url+'/jinding/showImg/'+v.drivinglLicense:'')+'" alt=""></td>\n' +
                     '<td>'+(v.doorEmissionStand||'')+'</td>\n' +
-                    '<td>'+(v.clientName||'')+'</td>\n' +
-                    '<td>'+(v.materialsNum||'')+'</td>\n' +
                     '<td>'+(v.materialsName||'')+'</td>\n' +
-                    '<td>'+(v.measureNum||'')+'</td>\n' +
-                    '<td>'+(v.crossWeigh||'')+'</td>\n' +
-                    '<td>'+(v.tareWeigh||'')+'</td>\n' +
                     '<td>'+(v.netWeigh||'')+'</td>\n' +
-                    '<td>'+(v.containerNum||'')+'</td>\n' +
                     '<td>'+(v.tranType==1?'公路':v.tranType==0?'铁路':v.tranType==2?'纯电动':'')+'</td>\n' +
-                    '<td>'+(v.transportUnit||'')+'</td>\n' +
+                    '<td>'+(v.owner||'')+'</td>\n' +
                     '</tr>'
             }
             $(".tranData").html(html)
@@ -228,20 +279,60 @@ $(function () {
     }
 
     //汇总表
+    // function timeTotal(){
+    //     summary={
+    //         monthTime:$('.summary-timeStart').val()||'',
+    //         dayTime:$('.summary-timeEnd').val()||'',
+    //         materialspId:$('.summary-materialsPname').val()||'',
+    //         materialsName:$('.summary-materialsName').val()||''
+    //     };
+    //     ajax_get("/jinding/sum/list?pageNum=1&pageSize="+noImgPage+"&monthTime="+summary.monthTime+"&dayTime="+summary.dayTime+"&materialsName="+summary.materialsName+"&materialspId="+summary.materialspId, function (data) {
+    //         $("#totalPage").paging({
+    //                 total: 10,
+    //                 numberPage: noImgPage
+    //             },
+    //             function(msg) {
+    //                 ajax_get("/jinding/sum/list?pageNum="+msg+"&pageSize="+noImgPage+"&monthTime="+summary.monthTime+"&dayTime="+summary.dayTime+"&materialsName="+summary.materialsName+"&materialspId="+summary.materialspId, function (data) {
+    //                     total(data)
+    //                 });
+    //             });
+    //         total(data)
+    //     });
+    //     function total(data){
+    //         var list=data.data,i=0,len=list.length,html='';
+    //         for(;i<len;i++){
+    //             var v=list[i];
+    //             html+=' <tr>\n' +
+    //                 '<td>'+(v.materialsPname||'')+'</td>\n' +
+    //                 '<td>'+(v.materialsName||'')+'</td>\n' +
+    //                 '<td>'+((v.carWeigh).toFixed(2))+'</td>\n' +
+    //                 '<td>'+((v.sumWeigh-v.carWeigh-v.electWeigh).toFixed(2))+'</td>\n' +
+    //                 '<td>'+((v.electWeigh).toFixed(2))+'</td>\n' +
+    //                 '<td>'+((v.sumWeigh).toFixed(2))+'</td>\n' +
+    //                 '<td>'+(v.percentage%1===0?v.percentage*100+'%':(v.percentage*100).toFixed(2)+'%')+'</td>\n' +
+    //                 '</tr>'
+    //         }
+    //         $(".totalData").html(html)
+    //     }
+    // }
+
     function timeTotal(){
         summary={
-            monthTime:$('.summary-timeStart').val()||'',
-            dayTime:$('.summary-timeEnd').val()||'',
-            materialspId:$('.summary-materialsPname').val()||'',
+            timeStart:$('.summary-timeStart').val()||'',
+            timeEnd:$('.summary-timeEnd').val()||'',
+            meaType:$('.summary-meaType').val()||'',
+            materialsPname:$('.summary-materialsPname').val()||'',
+            tranType:$('.summary-tranType').val()||'',
+            emissionStand:$('.summary-emissionStand').val()||'',
             materialsName:$('.summary-materialsName').val()||''
         };
-        ajax_get("/jinding/sum/list?pageNum=1&pageSize="+noImgPage+"&monthTime="+summary.monthTime+"&dayTime="+summary.dayTime+"&materialsName="+summary.materialsName+"&materialspId="+summary.materialspId, function (data) {
+        ajax_get("jinding/sum/list/two?pageNum=1&pageSize="+noImgPage+"&timeStart="+summary.timeStart+"&timeEnd="+summary.timeEnd+"&meaType="+summary.meaType+"&materialsPname="+summary.materialsPname+"&tranType="+summary.tranType+"&emissionStand="+summary.emissionStand+"&materialsName="+summary.materialsName, function (data) {
             $("#totalPage").paging({
-                    total: 10,
+                    total:  data.total,
                     numberPage: noImgPage
                 },
                 function(msg) {
-                    ajax_get("/jinding/sum/list?pageNum="+msg+"&pageSize="+noImgPage+"&monthTime="+summary.monthTime+"&dayTime="+summary.dayTime+"&materialsName="+summary.materialsName+"&materialspId="+summary.materialspId, function (data) {
+                    ajax_get("jinding/sum/list/two?pageNum="+msg+"&pageSize="+noImgPage+"&timeStart="+summary.timeStart+"&timeEnd="+summary.timeEnd+"&meaType="+summary.meaType+"&materialsPname="+summary.materialsPname+"&tranType="+summary.tranType+"&emissionStand="+summary.emissionStand+"&materialsName="+summary.materialsName, function (data) {
                         total(data)
                     });
                 });
@@ -252,17 +343,41 @@ $(function () {
             for(;i<len;i++){
                 var v=list[i];
                 html+=' <tr>\n' +
+                    '<td>'+(v.measureType&&(v.measureType==1?'采购 ':'销售'))+'</td>\n' +
                     '<td>'+(v.materialsPname||'')+'</td>\n' +
                     '<td>'+(v.materialsName||'')+'</td>\n' +
-                    '<td>'+((v.carWeigh).toFixed(2))+'</td>\n' +
-                    '<td>'+((v.sumWeigh-v.carWeigh-v.electWeigh).toFixed(2))+'</td>\n' +
-                    '<td>'+((v.electWeigh).toFixed(2))+'</td>\n' +
-                    '<td>'+((v.sumWeigh).toFixed(2))+'</td>\n' +
+                    '<td>'+(v.trainNum)+'</td>\n' +
+                    '<td>'+(v.trains)+'</td>\n' +
+                    '<td>'+(v.trainWeigh==0||v.trainWeigh%1==0?v.trainWeigh:v.trainWeigh.toFixed(2))+'</td>\n' +
+                    '<td>'+(v.electNum)+'</td>\n' +
+                    '<td>'+(v.elects)+'</td>\n' +
+                    '<td>'+(v.electWeigh==0||v.electWeigh%1==0?v.electWeigh:v.electWeigh.toFixed(2))+'</td>\n' +
+                    '<td>'+(v.carNum)+'</td>\n' +
+                    '<td>'+(v.cars)+'</td>\n' +
+                    '<td>'+(v.carWeigh==0||v.carWeigh%1==0?v.carWeigh:v.carWeigh.toFixed(2))+'</td>\n' +
                     '<td>'+(v.percentage%1===0?v.percentage*100+'%':(v.percentage*100).toFixed(2)+'%')+'</td>\n' +
                     '</tr>'
             }
-            $(".totalData").html(html)
+            $(".totalData").html(html);
+            autoRowSpan('newSummary',1,1);
+            autoRowSpan('newSummary',1,0);
         }
+        //汇总合计
+        ajax_get("jinding/sum/list/count?timeStart="+summary.timeStart+"&timeEnd="+summary.timeEnd, function (data) {
+            var list=data.data,i=0,len=list.length,html='';
+            for(;i<len;i++){
+                var v=list[i];
+                html+=' <tr>\n' +
+                    '<td>'+(v.measureType&&(v.measureType==1?'采购 ':v.measureType==2?'销售 ':'采购+销售'))+'</td>\n' +
+                    '<td>'+(v.trainWeigh==0||v.trainWeigh%1==0?v.trainWeigh:v.trainWeigh.toFixed(2))+'</td>\n' +
+                    '<td>'+(v.electWeigh==0||v.electWeigh%1==0?v.electWeigh:v.electWeigh.toFixed(2))+'</td>\n' +
+                    '<td>'+(v.carWeigh==0||v.carWeigh%1==0?v.carWeigh:v.carWeigh.toFixed(2))+'</td>\n' +
+                    '<td>'+(v.sumWeigh==0||v.sumWeigh%1==0?v.sumWeigh:v.sumWeigh.toFixed(2))+'</td>\n' +
+                    '<td>'+(v.percentage%1===0?v.percentage*100+'%':(v.percentage*100).toFixed(2)+'%')+'</td>\n' +
+                    '</tr>'
+            }
+            $(".hj").html(html);
+        });
     }
 
     $(".search-btn").click(function () {
@@ -280,4 +395,24 @@ $(function () {
         }
     });
 
+    //合并单元格
+    function autoRowSpan(tb,row,col){
+        var lastValue="";
+        var value="";
+        var pos=1;
+        var list=document.getElementById(tb).rows,
+            len=list.length,
+            i=row;
+        for(;i<len;i++){
+            value = list[i].cells[col].innerText;
+            if(lastValue == value){
+                list[i].deleteCell(col);
+                list[i-pos].cells[col].rowSpan = list[i-pos].cells[col].rowSpan+1;
+                pos++;
+            }else{
+                lastValue = value;
+                pos=1;
+            }
+        }
+    }
 });
