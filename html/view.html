@@ -525,6 +525,90 @@
                     <div id="totalPage" class="paging"></div>
                 </div>
             </div>
+            <div class="box red col-lgx-12 col-lg-12 col-xs-12">
+                <div class="box-div box-sizing">
+                    <div class="box-div-title"><span class="inline-block">外部运输车辆电子台账</span></div>
+                    <div class="box-div-search box-sizing">
+                        <div class="inline-block box-div-search-list">
+                            <span>车牌号:</span>
+                            <input class="externalVehicle-carNum" type="text">
+                        </div>
+                        <div class="inline-block box-div-search-list">
+                            <span>开始时间:</span>
+                            <input class="externalVehicle-timeStart" type="text" id="test5">
+                        </div>
+                        <div class="inline-block box-div-search-list">
+                            <span>结束时间:</span>
+                            <input class="externalVehicle-timeEnd" type="text" id="test6">
+                        </div>
+                        <div class="inline-block box-div-search-list">
+                            <span>燃油种类:</span>
+                            <select name="" class="externalVehicle-fuelType">
+                                <option value="">全部</option>
+                                <option value="柴油">柴油</option>
+                                <option value="天然气">天然气</option>
+                                <option value="纯电动">纯电动</option>
+                                <option value="油电混动">油电混动</option>
+                            </select>
+                        </div>
+                        <div class="inline-block box-div-search-list">
+                            <span>排放阶段:</span>
+                            <select name="" class="externalVehicle-emissionStand">
+                                <option value="">全部</option>
+                                <option value="国五">国五</option>
+                                <option value="国六">国六</option>
+                            </select>
+                        </div>
+                        <button type="button" data-msg="timeOutCar" class="btn btn-info search-btn">查询</button>
+                    </div>
+                    <div id="tabel4" class="tableList box-sizing inline-block">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>车牌号</th>
+                                <th>注册日期</th>
+                                <th>车辆识别代号(VIN)</th>
+                                <th>发动机号码</th>
+                                <th>排放阶段</th>
+                                <th>随车清单</th>
+                                <th>燃油方式</th>
+                                <th>行驶证</th>
+                            </tr>
+                            </thead>
+                            <tbody class="outTranData">
+                            <!--<tr>-->
+                            <!--<td>2020-7-22 10:00:0</td>-->
+                            <!--<td>2020-7-22 10:00:0</td>-->
+                            <!--<td>2020-7-22 17:00:0</td>-->
+                            <!--<td>2020-7-22 17:00:0</td>-->
+                            <!--<td><img class="table-img" src="../img/test.jpg" alt=""></td>-->
+                            <!--<td>名字</td>-->
+                            <!--<td>名字</td>-->
+                            <!--<td>99999999</td>-->
+                            <!--<td>2020-7-21 17:00:0</td>-->
+                            <!--<td>12345</td>-->
+                            <!--<td>777</td>-->
+                            <!--<td>柴油</td>-->
+                            <!--<td><img class="table-img" src="../img/test.jpg" alt=""></td>-->
+                            <!--<td><img class="table-img" src="../img/test.jpg" alt=""></td>-->
+                            <!--<td>国0:0</td>-->
+                            <!--<td>名字</td>-->
+                            <!--<td>1</td>-->
+                            <!--<td>物料1</td>-->
+                            <!--<td>888</td>-->
+                            <!--<td>2</td>-->
+                            <!--<td>4</td>-->
+                            <!--<td>6</td>-->
+                            <!--<td>999999</td>-->
+                            <!--<td>铁路</td>-->
+                            <!--<td>公司1</td>-->
+                            <!--</tr>-->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="outTranPage" class="paging"></div>
+                </div>
+            </div>
         </div>
         <div class="foot">
             <img class="ab-logo" src="../img/aobao.png" alt="">

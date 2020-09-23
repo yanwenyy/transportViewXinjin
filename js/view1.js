@@ -385,6 +385,47 @@ $(function () {
         });
     }
 
+    //外部车辆
+    function timeOutCar() {
+        externalVehicle={
+            timeStart:$('.externalVehicle-timeStart').val()||'',
+            timeEnd:$('.externalVehicle-timeEnd').val()||'',
+            fuelType:$('.externalVehicle-fuelType').val()||'',
+            emissionStand:$('.externalVehicle-emissionStand').val()||'',
+            carNum:$('.externalVehicle-carNum').val()||'',
+        };
+        ajax_get("jinding/outcartaizhang/list?pageNum=1&pageSize="+imgPage+"&carNum="+externalVehicle.carNum+"&timeStart="+externalVehicle.timeStart+"&timeEnd="+externalVehicle.timeEnd+"&fuelType="+externalVehicle.fuelType+"&emissionStand="+externalVehicle.emissionStand, function (data) {
+            $("#outTranPage").paging({
+                    total: data.total,
+                    numberPage: imgPage
+                },
+                function(msg) {
+                    //回调函数 msg为选中页码
+                    ajax_get("jinding/outcartaizhang/list?pageNum="+msg+"&pageSize="+imgPage+"&carNum="+externalVehicle.carNum+"&timeStart="+externalVehicle.timeStart+"&timeEnd="+externalVehicle.timeEnd+"&fuelType="+externalVehicle.fuelType+"&emissionStand="+externalVehicle.emissionStand, function (data) {
+                        outTran(data)
+                    });
+                });
+            outTran(data)
+        });
+        function outTran(data) {
+            var list=data.data,i=0,len=list.length,html='';
+            for(;i<len;i++){
+                var v=list[i];
+                html+=' <tr>\n' +
+                    '<td>'+(v.carNum||'')+'</td>\n' +
+                    '<td>'+(v.registTime&&v.registTime.split(" ")[0]||'')+'</td>\n' +
+                    '<td>'+(v.vehicleNum||'')+'</td>\n' +
+                    '<td>'+(v.engineNum||'')+'</td>\n' +
+                    '<td>'+(v.doorEmissionStand||'')+'</td>\n' +
+                    '<td><img title="点击查看大图" class="table-img" src="'+(v.carCheckList&&v.carCheckList.indexOf('http')!=-1?v.carCheckList:v.carCheckList?http_url.url+'/jinding/showImg/'+v.carCheckList:'')+'" alt=""></td>\n' +
+                    '<td>'+(v.fuelType||'')+'</td>\n' +
+                    '<td><img title="点击查看大图" class="table-img" src="'+(v.drivinglLicense&&v.drivinglLicense.indexOf('http')!=-1?v.drivinglLicense:v.drivinglLicense?http_url.url+'/jinding/showImg/'+v.drivinglLicense:'')+'" alt=""></td>\n' +
+                    '</tr>'
+            }
+            $(".outTranData").html(html)
+        }
+    }
+
     $(".search-btn").click(function () {
         var msg=$(this).attr("data-msg");
         if(msg=='timeCar'){
