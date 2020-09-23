@@ -184,10 +184,15 @@ $(function () {
             var list=data.data,i=0,len=list.length,html='';
             for(;i<len;i++){
                 var v=list[i];
+                var enterImg=v.enterImg?v.enterImg.split(','):[],eterImgHtml=``;
+                for(var j=0;j<enterImg.length;j++){
+                    eterImgHtml+=`<img title="点击查看大图" class="table-img" src="${enterImg[j]&&enterImg[j].indexOf('http')!=-1?enterImg[j]:enterImg[j]?http_url.url+'/jinding/showImg/door/'+enterImg[j]:''}" alt="">`
+                }
                 html+=' <tr>\n' +
                     '<td>'+(v.enterTime||'')+'</td>\n' +
                     '<td>'+(v.outFactoryTime||'')+'</td>\n' +
-                    '<td><img title="点击查看大图" class="table-img" src="'+(v.poundImg&&v.poundImg.indexOf('http')!=-1?v.poundImg:v.poundImg?http_url.url+'/jinding/showImg/'+v.poundImg:'')+'" alt=""></td>\n' +
+                    '<td>'+eterImgHtml+'</td>\n' +
+                    // '<td><img title="点击查看大图" class="table-img" src="'+(v.enterImg&&v.enterImg.indexOf('http')!=-1?v.poundImg:v.poundImg?http_url.url+'/jinding/showImg/'+v.poundImg:'')+'" alt=""></td>\n' +
                     '<td>'+(v.carNum||'')+'</td>\n' +
                     '<td>'+(v.registTime&&v.registTime.split(" ")[0]||'')+'</td>\n' +
                     '<td>'+(v.vehicleNum||'')+'</td>\n' +
